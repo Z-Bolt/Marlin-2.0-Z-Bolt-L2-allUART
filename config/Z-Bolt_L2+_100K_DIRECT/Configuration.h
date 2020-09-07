@@ -321,7 +321,7 @@
  * Enable and connect the power supply to the PS_ON_PIN.
  * Specify whether the power supply is active HIGH or active LOW.
  */
-#define PSU_CONTROL
+//#define PSU_CONTROL
 //#define PSU_NAME "Power Supply"
 
 #if ENABLED(PSU_CONTROL)
@@ -475,9 +475,12 @@
 
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
+//PT1000
 //#define  DEFAULT_Kp 23.63
 //#define  DEFAULT_Ki 3.15
 //#define  DEFAULT_Kd 44.32
+
+//100k
 #define DEFAULT_Kp 20.03
 #define DEFAULT_Ki 1.87
 #define DEFAULT_Kd 53.74
@@ -708,14 +711,14 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 150 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 405 }
 
 /**
  * Default Max Feed Rate (mm/s)
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 250, 250, 30, 100 }
+#define DEFAULT_MAX_FEEDRATE          { 250, 250, 35, 100 }
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
@@ -1042,8 +1045,8 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 199
-#define Y_BED_SIZE 198
+#define X_BED_SIZE 300
+#define Y_BED_SIZE 200
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
@@ -1051,7 +1054,7 @@
 #define Z_MIN_POS -5
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
-#define Z_MAX_POS 240
+#define Z_MAX_POS 340
 
 /**
  * Software Endstops
@@ -1200,7 +1203,7 @@
 #if EITHER(AUTO_BED_LEVELING_LINEAR, AUTO_BED_LEVELING_BILINEAR)
 
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 4
+  #define GRID_MAX_POINTS_X 5
   #define GRID_MAX_POINTS_Y 4
   //#define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
@@ -1315,7 +1318,7 @@
 #endif
 
 // Homing speeds (mm/m)
-#define HOMING_FEEDRATE_XY (2500)
+#define HOMING_FEEDRATE_XY (3000)
 #define HOMING_FEEDRATE_Z  (1500)
 
 // Validate that endstops are triggered on homing moves

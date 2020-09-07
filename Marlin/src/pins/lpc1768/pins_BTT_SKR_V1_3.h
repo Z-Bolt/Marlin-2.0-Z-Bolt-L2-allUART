@@ -31,7 +31,7 @@
  */
 #if X_HOME_DIR == -1 || !X_STALL_SENSITIVITY
   #define X_MIN_PIN          P1_29   // X_MIN
- // #define X_MAX_PIN          P1_28   // X_MAX
+  #define X_MAX_PIN          P1_28   // X_MAX
 #else
   #define X_MIN_PIN          P1_28   // X_MAX
   #define X_MAX_PIN          P1_29   // X_MIN
@@ -299,6 +299,14 @@
 #if SD_CONNECTION_IS(LCD)
   #define SS_PIN           P0_16
 #endif
+
+//
+// PSU
+//
+#ifndef PS_ON_PIN
+  #define PS_ON_PIN      P2_00
+#endif
+
 
 /**
  * Special pins
